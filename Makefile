@@ -12,13 +12,14 @@ all: os-image
 
 os-image: boot/boot.bin kernel.bin
 	cat $^ > $@
+	dd if=/dev/zero of=$@ bs=1 count=0 seek=1474560 2>/dev/null
 	@echo "Built os-image ($$(wc -c < os-image) bytes)"
 
 kernel.bin: $(ASM_OBJS) $(C_OBJS)
-	$(LD) $(LDFLAGS) -o $@ -Ttext 0x1000 $^ --oformat binary
+	$(LD) $(LDFLAGS) -o $@ -Ttext 0x10000 $^ --oformat binary
 
 kernel.elf: $(ASM_OBJS) $(C_OBJS)
-	$(LD) $(LDFLAGS) -o $@ -Ttext 0x1000 $^
+	$(LD) $(LDFLAGS) -o $@ -Ttext 0x10000 $^
 
 boot/boot.bin: boot/boot.asm
 	$(ASM) -f bin -o $@ $<
@@ -33,7 +34,7 @@ cpu/interrupt.o: cpu/interrupt.asm
 	$(CC) $(CFLAGS) -c $< -o $@
 
 run: os-image
-	qemu-system-i386 -fda os-image
+	qemu-system-i386 -drive file=os-image,format=raw,if=floppy -no-reboot -no-shutdown
 
 run-nographic: os-image
 	qemu-system-i386 -fda os-image -nographic -serial stdio

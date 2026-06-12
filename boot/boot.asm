@@ -1,15 +1,36 @@
 [org 0x7c00]
 
-KERNEL_OFFSET equ 0x1000
+KERNEL_OFFSET equ 0x10000      ; load kernel at 64KB, clear of this sector
 
 [bits 16]
 
 start:
     mov [BOOT_DRIVE], dl
-    mov bp, 0x9000
+    mov bp, 0x9f00
     mov sp, bp
+    in  al, 0x92               ; fast A20 (buffers live above 1MB)
+    or  al, 2
+    out 0x92, al
+    xor ax, ax                 ; VBE mode info block -> 0x0600
+    mov es, ax
+    mov di, 0x600
+    mov ax, 0x4f01
+    mov cx, 0x4115             ; 800x600x24 + linear framebuffer
+    int 0x10
+    cmp ax, 0x004f
+    jne vbe_fail
+    mov ax, 0x4f02
+    mov bx, 0x4115
+    int 0x10
+    cmp ax, 0x004f
+    jne vbe_fail
     call load_kernel
     call switch_to_pm
+    jmp $
+
+vbe_fail:
+    mov bx, VBE_ERR_MSG
+    call print_rm
     jmp $
 
 print_rm:
@@ -26,34 +47,45 @@ print_rm:
     popa
     ret
 
-disk_load:
-    push dx
+SECTORS equ 160                ; kernel sectors to load (LBA 1..SECTORS)
+
+load_kernel:
+    mov ax, KERNEL_OFFSET >> 4
+    mov es, ax
+    mov word [LBA], 1
+.next:
+    mov ax, [LBA]
+    cmp ax, SECTORS + 1
+    ja  .done
+    ; CHS for 1.44MB floppy: 18 spt, 2 heads
+    xor dx, dx
+    mov cx, 18
+    div cx                     ; ax = track#, dx = sector-1
+    mov cl, dl
+    inc cl                     ; CL = sector (1-based)
+    mov dh, al
+    and dh, 1                  ; head = track & 1
+    mov ch, al
+    shr ch, 1                  ; cyl  = track >> 1
+    mov dl, [BOOT_DRIVE]
+    xor bx, bx
     mov ah, 0x02
-    mov al, dh
-    mov ch, 0x00
-    mov dh, 0x00
-    mov cl, 0x02
+    mov al, 1
     int 0x13
     jc .disk_error
-    pop dx
-    cmp dh, al
-    jne .count_error
+    mov ax, es
+    add ax, 0x20               ; next 512-byte slot
+    mov es, ax
+    inc word [LBA]
+    jmp .next
+.done:
     ret
 .disk_error:
     mov bx, DISK_ERR_MSG
     call print_rm
     jmp $
-.count_error:
-    mov bx, SECT_ERR_MSG
-    call print_rm
-    jmp $
 
-load_kernel:
-    mov bx, KERNEL_OFFSET
-    mov dh, 31
-    mov dl, [BOOT_DRIVE]
-    call disk_load
-    ret
+LBA dw 0
 
 gdt_start:
     dd 0x00000000
@@ -102,8 +134,9 @@ init_pm:
     jmp KERNEL_OFFSET
 
 BOOT_DRIVE   db 0
-DISK_ERR_MSG db "Disk error!", 0
-SECT_ERR_MSG db "Bad sector count", 0
+DISK_ERR_MSG db "Disk err", 0
+SECT_ERR_MSG db "Sect err", 0
+VBE_ERR_MSG  db "VBE err", 0
 
 times 510-($-$$) db 0
 dw 0xaa55

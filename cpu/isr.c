@@ -1,21 +1,11 @@
 #include "isr.h"
 #include "idt.h"
-#include "../drivers/screen.h"
 #include "../drivers/ports.h"
 
 isr_t interrupt_handlers[256];
 
-static char *exc[]={
-    "Division By Zero","Debug","NMI","Breakpoint","Overflow","Out of Bounds",
-    "Invalid Opcode","No FPU","Double Fault","FPU Seg Overrun","Bad TSS",
-    "Segment Not Present","Stack Fault","General Protection","Page Fault",
-    "Unknown","FPU Fault","Alignment Check","Machine Check","SIMD FP",
-    "Virt","Rsv","Rsv","Rsv","Rsv","Rsv","Rsv","Rsv","Rsv","Rsv","Rsv","Rsv"
-};
-
 void isr_handler(registers_t *r){
     if(interrupt_handlers[r->int_no])interrupt_handlers[r->int_no](r);
-    else{kprint("EXCEPTION: ");kprint(exc[r->int_no]);kprint("\n");}
 }
 void irq_handler(registers_t *r){
     if(r->int_no>=40)port_byte_out(0xa0,0x20);
