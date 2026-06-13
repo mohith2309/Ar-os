@@ -4,14 +4,15 @@
     "margin-top": 10, "margin-left": 14, "margin-right": 14,
     "modules-left": ["custom/launch"],
     "modules-center": ["custom/ai"],
-    "modules-right": ["custom/net", "custom/bat", "clock", "custom/user", "custom/notif"],
+    "modules-right": ["tray", "custom/net", "custom/bat", "clock", "custom/user", "custom/notif"],
     "custom/launch": { "format": "⚡", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
     "custom/ai":     { "format": "🔍    What do you want to do?              ▶", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
+    "tray":          { "icon-size": 16, "spacing": 8 },
     "custom/net":    { "format": "📶", "tooltip": false },
     "custom/bat":    { "format": "🔋 100%", "tooltip": false },
     "clock":         { "format": "{:%H:%M}", "tooltip-format": "{:%A %d %B}" },
     "custom/user":   { "format": "👤", "tooltip": false },
-    "custom/notif":  { "format": "🔔", "on-click": "makoctl dismiss -a", "tooltip": false }
+    "custom/notif":  { "exec": "~/.config/waybar/scripts/notif.sh", "return-type": "json", "interval": 2, "on-click": "makoctl dismiss -a", "on-click-right": "makoctl restore" }
   },
   {
     "name": "dock", "layer": "top", "position": "bottom", "height": 64, "margin-bottom": 12,
@@ -24,5 +25,10 @@
     "custom/notes":    { "format": "📝", "on-click": "gnome-text-editor", "tooltip": false },
     "custom/settings": { "format": "⚙", "on-click": "nm-connection-editor", "tooltip": false },
     "custom/about":    { "format": "ℹ", "on-click": "kitty -e bash -c 'fastfetch||uname -a;read'", "tooltip": false }
+  },
+  {
+    "name": "widgets", "layer": "bottom", "position": "top", "height": 120, "margin-top": 70,
+    "modules-center": ["clock#big"],
+    "clock#big": { "format": "{:%H:%M}", "tooltip": false }
   }
 ]

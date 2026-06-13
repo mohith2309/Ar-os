@@ -23,3 +23,13 @@ window#waybar.dock .modules-center { background:rgba(255,255,255,0.92); border-r
 #custom-launcher{background:#8B5CF6;} #custom-files{background:#FFC94D;} #custom-term{background:#2A2433;}
 #custom-photos{background:#B36CEB;} #custom-music{background:#FF5F57;} #custom-notes{background:#2BC840;}
 #custom-settings{background:#4D9DE0;} #custom-about{background:#FF9F43;}
+
+/* notification pill: dot/alert when unread */
+#custom-notif.none { color:#8B5CF6; }
+#custom-notif.has  { color:#FF5F57; background:rgba(255,255,255,0.95); }
+/* tray (overflow pill) */
+#tray { background:rgba(255,255,255,0.9); padding:0 12px; margin-right:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.18); }
+#tray menu { background:#ffffff; color:#2A2433; }
+/* desktop clock widget */
+window#waybar.widgets { background:transparent; }
+#clock.big { color:#ffffff; font-size:64px; font-weight:700; text-shadow:0 2px 12px rgba(0,0,0,0.25); }
