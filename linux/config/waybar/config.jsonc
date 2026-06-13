@@ -1,0 +1,24 @@
+[
+  {
+    "name": "top", "layer": "top", "position": "top", "height": 44,
+    "margin-top": 10, "margin-left": 14, "margin-right": 14,
+    "modules-center": ["custom/logo", "custom/search"],
+    "modules-right": ["clock", "custom/power"],
+    "custom/logo":   { "format": "a", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
+    "custom/search": { "format": "What do you want to do?", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
+    "clock":         { "format": "{:%H:%M}", "tooltip-format": "{:%A %d %B}" },
+    "custom/power":  { "format": "100%", "tooltip": false }
+  },
+  {
+    "name": "dock", "layer": "top", "position": "bottom", "height": 60, "margin-bottom": 12,
+    "modules-center": ["custom/launcher","custom/files","custom/term","custom/photos","custom/music","custom/notes","custom/settings","custom/about"],
+    "custom/launcher": { "format": "a", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
+    "custom/files":    { "format": "F", "on-click": "nautilus", "tooltip": false },
+    "custom/term":     { "format": ">", "on-click": "kitty", "tooltip": false },
+    "custom/photos":   { "format": "P", "on-click": "loupe || nautilus", "tooltip": false },
+    "custom/music":    { "format": "M", "on-click": "gnome-text-editor", "tooltip": false },
+    "custom/notes":    { "format": "N", "on-click": "gnome-text-editor", "tooltip": false },
+    "custom/settings": { "format": "S", "on-click": "nm-connection-editor", "tooltip": false },
+    "custom/about":    { "format": "i", "on-click": "kitty -e bash -c 'fastfetch||uname -a;read'", "tooltip": false }
+  }
+]

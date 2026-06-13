@@ -1,0 +1,38 @@
+* { font-family: "Inter", sans-serif; font-weight: 700; border: none; min-height: 0; }
+window#waybar { background: transparent; }
+
+#custom-logo {
+  background: #8B5CF6; color: #fff; font-size: 15px;
+  padding: 0 14px; border-radius: 18px 0 0 18px;
+}
+#custom-search {
+  background: rgba(255,255,255,0.88); color: #6F6685; font-size: 14px;
+  padding: 0 130px 0 14px; border-radius: 0 18px 18px 0;
+  box-shadow: 0 6px 18px rgba(74,56,112,0.22);
+}
+#clock {
+  background: rgba(255,255,255,0.88); color: #2A2433; font-size: 14px;
+  padding: 0 14px; border-radius: 18px 0 0 18px;
+  box-shadow: 0 6px 18px rgba(74,56,112,0.18);
+}
+#custom-power {
+  background: rgba(255,255,255,0.88); color: #6F6685; font-size: 13px;
+  padding: 0 16px 0 6px; border-radius: 0 18px 18px 0;
+}
+
+window#waybar.dock .modules-center {
+  background: rgba(255,255,255,0.9); border-radius: 30px; padding: 0 12px;
+  box-shadow: 0 10px 30px rgba(74,56,112,0.30);
+}
+#custom-launcher,#custom-files,#custom-term,#custom-photos,#custom-music,#custom-notes,#custom-settings,#custom-about {
+  color: #fff; font-size: 17px; margin: 8px 6px; padding: 0;
+  min-width: 38px; min-height: 38px; border-radius: 50%;
+}
+#custom-launcher { background: #8B5CF6; }
+#custom-files    { background: #FFC94D; }
+#custom-term     { background: #2A2433; color: #2BC840; }
+#custom-photos   { background: #B36CEB; }
+#custom-music    { background: #FF5F57; }
+#custom-notes    { background: #2BC840; }
+#custom-settings { background: #4D9DE0; }
+#custom-about    { background: #FF9F43; }
