@@ -1,0 +1,7 @@
+allow_images=true
+image_size=64
+insensitive=true
+prompt=Search apps…
+no_actions=true
+gtk_dark=false
+hide_scroll=true

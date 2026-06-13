@@ -1,0 +1,36 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 44,
+    "margin-top": 10,
+    "margin-left": 14,
+    "margin-right": 14,
+    "modules-center": ["custom/search"],
+    "modules-right": ["network", "pulseaudio", "clock", "battery"],
+
+    "custom/search": {
+        "format": "  What do you want to do?",
+        "on-click": "~/.config/aros/launcher.sh",
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%A, %d %B}</big>"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format": "{essid}"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    }
+}

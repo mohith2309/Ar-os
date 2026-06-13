@@ -1,0 +1,41 @@
+* {
+    font-family: "Font Awesome 6 Free", "Symbols Nerd Font";
+    font-size: 20px;
+    border: none;
+}
+
+window#waybar { background: transparent; }
+
+/* the floating dock pill */
+#waybar.bottom .modules-center {
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 28px;
+    padding: 0 14px;
+    box-shadow: 0 10px 30px rgba(74, 56, 112, 0.28);
+}
+
+/* round colorful app icons */
+#custom-launcher, #custom-files, #custom-term, #custom-photos,
+#custom-music, #custom-notes, #custom-settings, #custom-about {
+    color: #ffffff;
+    padding: 0 6px;
+    margin: 6px 5px;
+    min-width: 34px;
+    min-height: 34px;
+    border-radius: 50%;
+}
+#custom-launcher { background: #8B5CF6; }
+#custom-files    { background: #FFC94D; }
+#custom-term     { background: #2A2433; }
+#custom-photos   { background: #B36CEB; }
+#custom-music    { background: #FF5F57; }
+#custom-notes    { background: #2BC840; }
+#custom-settings { background: #4D9DE0; }
+#custom-about    { background: #FF9F43; }
+
+#custom-launcher:hover, #custom-files:hover, #custom-term:hover,
+#custom-photos:hover, #custom-music:hover, #custom-notes:hover,
+#custom-settings:hover, #custom-about:hover {
+    margin: 2px 5px;
+    min-height: 40px;
+}

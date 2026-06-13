@@ -1,0 +1,30 @@
+# arOS 3 lock screen — big clock over dark glass (needs swaylock-effects)
+image=~/.config/aros/wallpaper-dark.png
+scaling=fill
+
+clock
+timestr=%H:%M
+datestr=%A %d %B
+font=Inter
+
+indicator
+indicator-radius=120
+indicator-thickness=8
+indicator-caps-lock
+
+ring-color=8B5CF6
+ring-ver-color=B36CEB
+ring-clear-color=FFC94D
+ring-wrong-color=FF5F57
+inside-color=2E145288
+inside-ver-color=2E145288
+inside-wrong-color=2E1452aa
+line-uses-ring
+
+text-color=F2ECFC
+text-ver-color=F2ECFC
+key-hl-color=B36CEB
+separator-color=00000000
+
+effect-blur=10x3
+fade-in=0.4
