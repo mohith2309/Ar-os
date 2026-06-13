@@ -19,7 +19,7 @@ if command -v pacman >/dev/null; then
 elif command -v dnf >/dev/null; then
     echo ":: Fedora detected…"
     sudo dnf install -y hyprland waybar wofi mako kitty nautilus pavucontrol fastfetch \
-                        rsms-inter-fonts fontawesome-fonts python3 || true
+                        rsms-inter-fonts fontawesome6-fonts python3 || true
     echo "!! swww / swaylock-effects / hypridle: build from source or COPR"
 elif command -v apt >/dev/null; then
     echo ":: Debian/Ubuntu detected…"
