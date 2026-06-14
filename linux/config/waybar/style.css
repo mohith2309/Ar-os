@@ -33,3 +33,15 @@ window#waybar.dock .modules-center { background:rgba(255,255,255,0.92); border-r
 /* desktop clock widget */
 window#waybar.widgets { background:transparent; }
 #clock.big { color:#ffffff; font-size:64px; font-weight:700; text-shadow:0 2px 12px rgba(0,0,0,0.25); }
+
+/* real gradient icons */
+#custom-launch { background:transparent; box-shadow:none; padding:0; margin-right:10px; min-width:38px; min-height:38px; background-image:url("/home/aros/.config/aros/icons/launcher.png"); background-size:34px 34px; background-repeat:no-repeat; background-position:center; }
+#custom-launcher,#custom-files,#custom-term,#custom-photos,#custom-music,#custom-notes,#custom-settings,#custom-about { background-color:transparent; background-repeat:no-repeat; background-position:center; background-size:44px 44px; min-width:48px; min-height:48px; margin:7px 5px; border-radius:0; }
+#custom-launcher { background-image:url("/home/aros/.config/aros/icons/launcher.png"); }
+#custom-files { background-image:url("/home/aros/.config/aros/icons/files.png"); }
+#custom-term { background-image:url("/home/aros/.config/aros/icons/terminal.png"); }
+#custom-photos { background-image:url("/home/aros/.config/aros/icons/photos.png"); }
+#custom-music { background-image:url("/home/aros/.config/aros/icons/music.png"); }
+#custom-notes { background-image:url("/home/aros/.config/aros/icons/notes.png"); }
+#custom-settings { background-image:url("/home/aros/.config/aros/icons/settings.png"); }
+#custom-about { background-image:url("/home/aros/.config/aros/icons/about.png"); }
