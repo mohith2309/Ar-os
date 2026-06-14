@@ -30,9 +30,7 @@ window#waybar.dock .modules-center { background:rgba(255,255,255,0.92); border-r
 /* tray (overflow pill) */
 #tray { background:rgba(255,255,255,0.9); padding:0 12px; margin-right:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.18); }
 #tray menu { background:#ffffff; color:#2A2433; }
-/* desktop clock widget */
-window#waybar.widgets { background:transparent; }
-#clock.big { color:#ffffff; font-size:64px; font-weight:700; text-shadow:0 2px 12px rgba(0,0,0,0.25); }
+
 
 /* real gradient icons */
 #custom-launch { background:transparent; box-shadow:none; padding:0; margin-right:10px; min-width:38px; min-height:38px; background-image:url("/home/aros/.config/aros/icons/launcher.png"); background-size:34px 34px; background-repeat:no-repeat; background-position:center; }

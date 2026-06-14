@@ -1,34 +1,119 @@
 [
   {
-    "name": "top", "layer": "top", "position": "top", "height": 46,
-    "margin-top": 10, "margin-left": 14, "margin-right": 14,
-    "modules-left": ["custom/launch"],
-    "modules-center": ["custom/ai"],
-    "modules-right": ["tray", "custom/net", "custom/bat", "clock", "custom/user", "custom/notif"],
-    "custom/launch": { "format": " ", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
-    "custom/ai":     { "format": "🔍    What do you want to do?              ▶", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
-    "tray":          { "icon-size": 16, "spacing": 8 },
-    "custom/net":    { "format": "📶", "tooltip": false },
-    "custom/bat":    { "format": "🔋 100%", "tooltip": false },
-    "clock":         { "format": "{:%H:%M}", "tooltip-format": "{:%A %d %B}" },
-    "custom/user":   { "format": "👤", "tooltip": false },
-    "custom/notif":  { "exec": "~/.config/waybar/scripts/notif.sh", "return-type": "json", "interval": 2, "on-click": "makoctl dismiss -a", "on-click-right": "makoctl restore" }
+    "name": "top",
+    "layer": "top",
+    "position": "top",
+    "height": 46,
+    "margin-top": 10,
+    "margin-left": 14,
+    "margin-right": 14,
+    "modules-left": [
+      "custom/launch"
+    ],
+    "modules-center": [
+      "custom/ai"
+    ],
+    "modules-right": [
+      "tray",
+      "custom/net",
+      "custom/bat",
+      "clock",
+      "custom/user",
+      "custom/notif"
+    ],
+    "custom/launch": {
+      "format": " ",
+      "on-click": "~/.config/aros/launcher.sh",
+      "tooltip": false
+    },
+    "custom/ai": {
+      "format": "🔍    What do you want to do?              ▶",
+      "on-click": "~/.config/aros/launcher.sh",
+      "tooltip": false
+    },
+    "tray": {
+      "icon-size": 16,
+      "spacing": 8
+    },
+    "custom/net": {
+      "format": "📶",
+      "tooltip": false
+    },
+    "custom/bat": {
+      "format": "🔋 100%",
+      "tooltip": false
+    },
+    "clock": {
+      "format": "{:%H:%M}",
+      "tooltip-format": "{:%A %d %B}"
+    },
+    "custom/user": {
+      "format": "👤",
+      "tooltip": false
+    },
+    "custom/notif": {
+      "exec": "~/.config/waybar/scripts/notif.sh",
+      "return-type": "json",
+      "interval": 2,
+      "on-click": "makoctl dismiss -a",
+      "on-click-right": "makoctl restore"
+    }
   },
   {
-    "name": "dock", "layer": "top", "position": "bottom", "height": 64, "margin-bottom": 12,
-    "modules-center": ["custom/launcher","custom/files","custom/term","custom/photos","custom/music","custom/notes","custom/settings","custom/about"],
-    "custom/launcher": { "format": " ", "on-click": "~/.config/aros/launcher.sh", "tooltip": false },
-    "custom/files":    { "format": " ", "on-click": "nautilus", "tooltip": false },
-    "custom/term":     { "format": " ", "on-click": "kitty", "tooltip": false },
-    "custom/photos":   { "format": " ", "on-click": "loupe || nautilus", "tooltip": false },
-    "custom/music":    { "format": " ", "on-click": "gnome-text-editor", "tooltip": false },
-    "custom/notes":    { "format": " ", "on-click": "gnome-text-editor", "tooltip": false },
-    "custom/settings": { "format": " ", "on-click": "nm-connection-editor", "tooltip": false },
-    "custom/about":    { "format": " ", "on-click": "kitty -e bash -c 'fastfetch||uname -a;read'", "tooltip": false }
-  },
-  {
-    "name": "widgets", "layer": "bottom", "position": "top", "height": 120, "margin-top": 70,
-    "modules-center": ["clock#big"],
-    "clock#big": { "format": "{:%H:%M}", "tooltip": false }
+    "name": "dock",
+    "layer": "top",
+    "position": "bottom",
+    "height": 64,
+    "margin-bottom": 12,
+    "modules-center": [
+      "custom/launcher",
+      "custom/files",
+      "custom/term",
+      "custom/photos",
+      "custom/music",
+      "custom/notes",
+      "custom/settings",
+      "custom/about"
+    ],
+    "custom/launcher": {
+      "format": " ",
+      "on-click": "~/.config/aros/launcher.sh",
+      "tooltip": false
+    },
+    "custom/files": {
+      "format": " ",
+      "on-click": "nautilus",
+      "tooltip": false
+    },
+    "custom/term": {
+      "format": " ",
+      "on-click": "kitty",
+      "tooltip": false
+    },
+    "custom/photos": {
+      "format": " ",
+      "on-click": "loupe || nautilus",
+      "tooltip": false
+    },
+    "custom/music": {
+      "format": " ",
+      "on-click": "gnome-text-editor",
+      "tooltip": false
+    },
+    "custom/notes": {
+      "format": " ",
+      "on-click": "gnome-text-editor",
+      "tooltip": false
+    },
+    "custom/settings": {
+      "format": " ",
+      "on-click": "nm-connection-editor",
+      "tooltip": false
+    },
+    "custom/about": {
+      "format": " ",
+      "on-click": "kitty -e bash -c 'fastfetch||uname -a;read'",
+      "tooltip": false
+    }
   }
 ]
