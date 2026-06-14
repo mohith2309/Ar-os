@@ -43,3 +43,9 @@ window#waybar.dock .modules-center { background:rgba(255,255,255,0.92); border-r
 #custom-notes { background-image:url("/home/aros/.config/aros/icons/notes.png"); }
 #custom-settings { background-image:url("/home/aros/.config/aros/icons/settings.png"); }
 #custom-about { background-image:url("/home/aros/.config/aros/icons/about.png"); }
+
+/* universal window controls (act on focused window) */
+#custom-wclose,#custom-wmin,#custom-wmax { font-size:16px; padding:0 4px; margin:0 1px; }
+#custom-wclose { color:#FF5F57; padding-left:14px; background:rgba(255,255,255,0.9); border-radius:18px 0 0 18px; margin-left:8px; }
+#custom-wmin   { color:#FFC94D; background:rgba(255,255,255,0.9); }
+#custom-wmax   { color:#2BC840; padding-right:14px; background:rgba(255,255,255,0.9); border-radius:0 18px 18px 0; box-shadow:0 6px 18px rgba(74,56,112,0.18); }
