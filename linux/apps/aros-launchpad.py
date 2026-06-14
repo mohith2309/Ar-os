@@ -6,8 +6,8 @@ ICO=os.path.expanduser("~/.config/aros/icons")
 APPS=[
  ("Files","files","nautilus"),("Terminal","terminal","kitty"),
  ("Photos","photos","loupe || nautilus"),("Music","music","gnome-text-editor"),
- ("Notes","notes","gnome-text-editor"),("Settings","settings","nm-connection-editor"),
- ("App Store","store","gnome-software || flatpak run flathub"),
+ ("Notes","notes","gnome-text-editor"),("Settings","settings","env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"),
+ ("App Store","store","env XDG_CURRENT_DESKTOP=GNOME gnome-software"),
  ("Personalize","personalize","env GSK_RENDERER=cairo python3 ~/.config/aros/aros-personalize.py"),
  ("Compatibility","compat","env GSK_RENDERER=cairo python3 ~/.config/aros/aros-compat.py"),
  ("About","about","kitty -e bash -c 'fastfetch||uname -a;read'"),

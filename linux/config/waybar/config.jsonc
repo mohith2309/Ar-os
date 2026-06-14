@@ -125,7 +125,7 @@
     },
     "custom/settings": {
       "format": " ",
-      "on-click": "nm-connection-editor",
+      "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
       "tooltip": false
     },
     "custom/about": {
