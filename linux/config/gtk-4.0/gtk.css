@@ -1,0 +1,39 @@
+@define-color accent_bg_color #8B5CF6;
+@define-color accent_color   #7C4DF0;
+@define-color accent_fg_color #ffffff;
+@define-color window_bg_color #F7F4FC;
+@define-color view_bg_color   #FBF9FE;
+@define-color headerbar_bg_color #F1ECFA;
+
+window, .background { background-color: #F7F4FC; }
+
+headerbar, .titlebar {
+  background: linear-gradient(180deg, #FBF9FE, #ECE6F7);
+  color: #2A2433;
+  border-bottom: 1px solid rgba(139,92,246,0.10);
+  box-shadow: none;
+  min-height: 46px;
+}
+headerbar button, button {
+  border-radius: 11px;
+  border: none;
+}
+headerbar button:hover, button:hover { background: rgba(139,92,246,0.12); }
+entry, .search, searchbar entry {
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(139,92,246,0.12);
+  min-height: 36px;
+}
+.sidebar, .navigation-sidebar, placessidebar {
+  background-color: #EFE9F8;
+}
+.navigation-sidebar row:selected, row:selected, .activatable:selected, list row:selected {
+  background-color: #8B5CF6;
+  color: #ffffff;
+  border-radius: 12px;
+}
+switch:checked { background-color: #8B5CF6; }
+.suggested-action, button.suggested-action {
+  background: #8B5CF6; color: #fff; border-radius: 12px;
+}
