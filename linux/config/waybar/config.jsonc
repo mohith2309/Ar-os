@@ -99,38 +99,59 @@
       "tooltip": false
     },
     "custom/files": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh nautilus",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "nautilus",
+      "format": "{}",
       "tooltip": false
     },
     "custom/term": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh kitty",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "kitty",
+      "format": "{}",
       "tooltip": false
     },
     "custom/photos": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh loupe",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "loupe || nautilus",
+      "format": "{}",
       "tooltip": false
     },
     "custom/music": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh texteditor",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "gnome-text-editor",
+      "format": "{}",
       "tooltip": false
     },
     "custom/notes": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh texteditor",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "gnome-text-editor",
+      "format": "{}",
       "tooltip": false
     },
     "custom/settings": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh control-center",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
+      "format": "{}",
       "tooltip": false
     },
     "custom/about": {
-      "format": " ",
+      "exec": "~/.config/waybar/scripts/running.sh kitty",
+      "return-type": "json",
+      "interval": 2,
       "on-click": "kitty -e bash -c 'fastfetch||uname -a;read'",
+      "format": "{}",
       "tooltip": false
     }
   }

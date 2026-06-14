@@ -2,7 +2,7 @@
 window#waybar { background: transparent; }
 
 /* launchpad pill (left) */
-#custom-launch { background:#8B5CF6; color:#fff; font-size:17px; padding:0 16px; margin-right:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.25); }
+#custom-launch { background:@ACCENT@; color:#fff; font-size:17px; padding:0 16px; margin-right:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.25); }
 
 /* AI search pill (center) */
 #custom-ai { background:rgba(255,255,255,0.9); color:#6F6685; font-size:14px; padding:0 22px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.22); }
@@ -13,19 +13,19 @@ window#waybar { background: transparent; }
 #clock       { background:rgba(255,255,255,0.9); color:#2A2433; font-size:14px; padding:0 10px; }
 #custom-user { background:rgba(255,255,255,0.9); color:#2A2433; font-size:15px; padding:0 16px 0 10px; border-radius:0 23px 23px 0; }
 /* notification pill (separate) */
-#custom-notif { background:rgba(255,255,255,0.9); color:#8B5CF6; font-size:15px; padding:0 13px; margin-left:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.18); }
+#custom-notif { background:rgba(255,255,255,0.9); color:@ACCENT@; font-size:15px; padding:0 13px; margin-left:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.18); }
 
 /* dock */
 window#waybar.dock .modules-center { background:rgba(255,255,255,0.92); border-radius:32px; padding:0 12px; box-shadow:0 10px 30px rgba(74,56,112,0.30); }
 #custom-launcher,#custom-files,#custom-term,#custom-photos,#custom-music,#custom-notes,#custom-settings,#custom-about {
   color:#fff; font-size:19px; margin:8px 6px; padding:0; min-width:40px; min-height:40px; border-radius:50%;
 }
-#custom-launcher{background:#8B5CF6;} #custom-files{background:#FFC94D;} #custom-term{background:#2A2433;}
+#custom-launcher{background:@ACCENT@;} #custom-files{background:#FFC94D;} #custom-term{background:#2A2433;}
 #custom-photos{background:#B36CEB;} #custom-music{background:#FF5F57;} #custom-notes{background:#2BC840;}
 #custom-settings{background:#4D9DE0;} #custom-about{background:#FF9F43;}
 
 /* notification pill: dot/alert when unread */
-#custom-notif.none { color:#8B5CF6; }
+#custom-notif.none { color:@ACCENT@; }
 #custom-notif.has  { color:#FF5F57; background:rgba(255,255,255,0.95); }
 /* tray (overflow pill) */
 #tray { background:rgba(255,255,255,0.9); padding:0 12px; margin-right:8px; border-radius:23px; box-shadow:0 6px 18px rgba(74,56,112,0.18); }
@@ -55,5 +55,5 @@ window#waybar.dock .modules-center { background:rgba(255,255,255,0.92); border-r
 #custom-files.running,#custom-term.running,#custom-photos.running,#custom-music.running,#custom-notes.running,#custom-settings.running,#custom-about.running {
   background-color: rgba(255,255,255,0.34);
   border-radius: 14px;
-  box-shadow: inset 0 -4px 0 0 #8B5CF6;
+  box-shadow: inset 0 -4px 0 0 @ACCENT@;
 }

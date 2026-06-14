@@ -4,7 +4,8 @@ gi.require_version("Gtk","4.0"); gi.require_version("Adw","1")
 from gi.repository import Gtk, Adw, Gdk
 ICO=os.path.expanduser("~/.config/aros/icons")
 APPS=[
- ("Files","files","nautilus"),("Terminal","terminal","kitty"),
+ ("Files","files","nautilus"),
+ ("Firefox","web","firefox"),("Terminal","terminal","kitty"),
  ("Photos","photos","loupe || nautilus"),("Music","music","gnome-text-editor"),
  ("Notes","notes","gnome-text-editor"),("Settings","settings","env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"),
  ("App Store","store","env XDG_CURRENT_DESKTOP=GNOME gnome-software"),
